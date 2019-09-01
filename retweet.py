@@ -39,7 +39,7 @@ def select_tweet(collection, last_user_tweeted=None):
 
 def retweet(api, id, screen_name, collection):
     url = f"https://twitter.com/{screen_name}/status/{id}"
-    api.update_status(f"Behold, the toxicity of @{screen_name} {url}")
+    api.update_status(f"@{screen_name} be like {url}")
     upd = collection.update_one(
         {"_id": id},
         {"$set": {"retweeted_time": datetime.now()}}
